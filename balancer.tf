@@ -2,11 +2,11 @@
 
 # Application Load Balancer
 resource "aws_lb" "main" {
-  name = "${var.project_name}-alb"
-  internal = false
+  name               = "${var.project_name}-alb"
+  internal           = false
   load_balancer_type = "application"
-  security_groups = [aws_security_group.alb_sg.id]
-  subnets = module.vpc.public_subnets
+  security_groups    = [aws_security_group.alb_sg.id]
+  subnets            = module.vpc.public_subnets
 
   enable_deletion_protection = false
 
@@ -22,7 +22,7 @@ resource "aws_lb_listener" "http" {
   protocol          = "HTTP"
 
   default_action {
-    type = "forward"
+    type             = "forward"
     target_group_arn = aws_lb_target_group.ollama_target_group.arn
   }
 }
@@ -38,7 +38,7 @@ resource "aws_lb_target_group" "ollama_target_group" {
     path                = "/api/tags"
     interval            = 30
     timeout             = 5
-    healthy_threshold  = 2
+    healthy_threshold   = 2
     unhealthy_threshold = 2
     matcher             = "200-299"
   }
@@ -54,7 +54,7 @@ resource "aws_lb_listener_rule" "ollama_rule" {
   priority     = 100
 
   action {
-    type = "forward"
+    type             = "forward"
     target_group_arn = aws_lb_target_group.ollama_target_group.arn
   }
 

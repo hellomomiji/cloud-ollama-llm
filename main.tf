@@ -5,5 +5,5 @@ provider "aws" {
 # Local Variables
 locals {
   nam_prefix = var.project_name
-  region       = var.region
+  region     = var.region
 }

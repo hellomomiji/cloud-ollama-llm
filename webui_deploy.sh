@@ -20,11 +20,8 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 sudo docker run -d \
-  --cpus=2 \
-  --memory=4g \
-  --memory-reservation=3g \
-  -p 80:8080 \
-  -e OLLAMA_BASE_URL=http://${dns_name} \
-  -v open-webui:/app/backend/data \
-  --name open-webui \
-  --restart always ghcr.io/open-webui/open-webui:main
+  -p 80:3000 \
+  --add-host=host.docker.internal:host-gateway \
+  -e OLLAMA_URL=http://${dns_name} \
+  --name nextjs-ollama-ui \
+  --restart always jakobhoeg/nextjs-ollama-ui:latest

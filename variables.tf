@@ -55,7 +55,7 @@ variable "root_volume_size" {
 variable "ollama_min_size" {
   description = "ollama min number of instances for autoscaling group"
   type        = number
-  default     = 1  
+  default     = 1
 }
 
 variable "ollama_max_size" {
@@ -73,7 +73,7 @@ variable "ollama_desired_size" {
 variable "ollama_model" {
   description = "the model used in this project"
   type        = string
-  default     = "tinyllama" # Can change to other small models
+  default     = "mistral" # Can change to other small models
 }
 
 variable "ssh_allowed_ips" {
@@ -85,17 +85,17 @@ variable "ssh_allowed_ips" {
 variable "http_allowed_ips" {
   description = "Allowed http ips"
   type        = list(string)
-  default = [ "0.0.0.0/0" ]
+  default     = ["0.0.0.0/0"]
 }
 
 variable "common_tags" {
   description = "common tags for all resources"
   type        = map(string)
-  default     = {
-    "Name"        = "cloud-ollama-llm"
-    "Project"     = "cloud-ollama-llm"
-    "Owner"       = "yang-jiang"
-    ManagedBy = "Terraform"
+  default = {
+    "Name"      = "cloud-ollama-llm"
+    "Project"   = "cloud-ollama-llm"
+    "Owner"     = "yang-jiang"
+    ManagedBy   = "Terraform"
     Environment = "dev"
   }
 }
