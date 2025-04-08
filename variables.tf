@@ -73,7 +73,7 @@ variable "ollama_desired_size" {
 variable "ollama_model" {
   description = "the model used in this project"
   type        = string
-  default     = "mistral" # Can change to other small models
+  default     = "tinyllama" # Can change to other small models
 }
 
 variable "ssh_allowed_ips" {
