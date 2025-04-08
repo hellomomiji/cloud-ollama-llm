@@ -17,7 +17,7 @@ This Terraform project deploys an Ollama Large Language Model (LLM) on AWS with 
 4. **SSH Key Pair**: Created in AWS for EC2 access (if needed).
 
 ## Files Structure
-.
+```
 ├── balancer.tf # ALB, target groups, and listener rules
 ├── compute.tf # Launch templates, EC2 instances, and ASG
 ├── monitoring.tf # CloudWatch alarms and scaling policies
@@ -27,6 +27,7 @@ This Terraform project deploys an Ollama Large Language Model (LLM) on AWS with 
 ├── main.tf # AWS provider and locals
 ├── ollama_deploy.sh # User data script for Ollama instances
 ├── webui_deploy.sh # User data script for Web UI instance
+```
 
 ## Usage
 
