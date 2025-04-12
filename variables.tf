@@ -49,7 +49,7 @@ variable "model_storage_size" {
 variable "root_volume_size" {
   description = "root volume size"
   type        = number
-  default     = 20
+  default     = 30
 }
 
 variable "ollama_min_size" {
@@ -61,7 +61,7 @@ variable "ollama_min_size" {
 variable "ollama_max_size" {
   description = "ollama max number of instances for autoscaling group"
   type        = number
-  default     = 3
+  default     = 5
 }
 
 variable "ollama_desired_size" {
