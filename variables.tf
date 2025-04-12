@@ -31,13 +31,13 @@ variable "subnet_cidrs" {
 variable "ollama_instance_type" {
   description = "EC2 instance type for ollama"
   type        = string
-  default     = "t2.medium"
+  default     = "t3.medium"
 }
 
 variable "webui_instance_type" {
   description = "EC2 instance type for webui"
   type        = string
-  default     = "t2.medium"
+  default     = "t3.medium"
 }
 
 variable "model_storage_size" {
