@@ -36,7 +36,7 @@ This Terraform project deploys an Ollama Large Language Model (LLM) on AWS with 
 git clone <repo-url>
 cd <repo-directory>
 ```
-### 2. Configure Variables
+### 2. Configure Variables (Optional)
 Modify variables.tf or create a terraform.tfvars file to override defaults:
 ```hcl
 region                  = "us-east-1"
@@ -51,7 +51,7 @@ ollama_instance_type    = "t2.medium" # Change instance type here, t2.medium as 
 ```bash
 terraform init
 terraform plan  # Review changes
-terraform apply -auto-approve
+terraform apply --auto-approve
 ```
 
 ### 4. Access the Web UI
