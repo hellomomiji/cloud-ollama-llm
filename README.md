@@ -8,6 +8,8 @@ This Terraform project deploys an Ollama Large Language Model (LLM) on AWS with 
   - **Web UI**: A [Next.js web interface](https://github.com/jakobhoeg/nextjs-ollama-llm-ui) deployed as a Docker container on EC2 to interact with the Ollama API.
   - **Load Balancer**: Distributes traffic to Ollama instances.
   - **Monitoring**: CloudWatch alarms trigger scaling based on CPU utilization.
+- **Architecure Diagram**:
+![ollama-llm-diagram](ollama-llm-diagram.png)
 
 ## Prerequisites
 
@@ -70,3 +72,5 @@ To destroy the infrastructure, run:
 ```bash
 terraform destroy -auto-approve
 ```
+
+
